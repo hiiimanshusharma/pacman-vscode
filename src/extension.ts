@@ -1,21 +1,20 @@
 import * as vscode from 'vscode';
-import { WebviewManager } from './WebviewManager';
+import { PacmanViewProvider } from './PacmanViewProvider';
 
 export function activate(context: vscode.ExtensionContext) {
     console.log('Pac-Man extension is now active!');
 
+    const provider = new PacmanViewProvider(context.extensionUri);
+
+    context.subscriptions.push(
+        vscode.window.registerWebviewViewProvider(PacmanViewProvider.viewType, provider)
+    );
+
     let startDisposable = vscode.commands.registerCommand('pacman-extension.startSession', () => {
-        WebviewManager.createOrShow(context.extensionUri);
-        // Dispatch 'start-animation' so frontend begins loop after it is "ready". Ideally frontend calls "ready" first, which we handle.
+        vscode.commands.executeCommand('pacman-extension.view.focus');
     });
 
-    let stopDisposable = vscode.commands.registerCommand('pacman-extension.stopSession', () => {
-        WebviewManager.stop();
-    });
-
-    context.subscriptions.push(startDisposable, stopDisposable);
+    context.subscriptions.push(startDisposable);
 }
 
-export function deactivate() {
-    WebviewManager.stop();
-}
+export function deactivate() { }
