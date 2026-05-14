@@ -2,6 +2,7 @@
   "name": "pacman-extension",
   "displayName": "Pac-Man Extension",
   "description": "Pac-Man overlay for VS Code",
+  "icon": "assets/icon.png",
   "version": "0.0.1",
   "publisher": "hiiimanshusharma",
   "license": "MIT",
