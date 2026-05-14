@@ -3,6 +3,12 @@
   "displayName": "Pac-Man Extension",
   "description": "Pac-Man overlay for VS Code",
   "version": "0.0.1",
+  "publisher": "hiiimanshusharma",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hiiimanshusharma/pacman-vscode.git"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -59,6 +65,7 @@
     "@types/vscode": "^1.80.0",
     "@typescript-eslint/eslint-plugin": "^5.59.1",
     "@typescript-eslint/parser": "^5.59.1",
+    "@vscode/vsce": "^3.9.1",
     "eslint": "^8.39.0",
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.4",
