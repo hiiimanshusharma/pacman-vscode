@@ -22,7 +22,4 @@ jobs:
         run: npm run compile
         
       - name: Publish to Visual Studio Marketplace
-        uses: HaaLeo/publish-vscode-extension@v1
-        with:
-          pat: ${{ secrets.VSCE_PAT }}
-          registryUrl: https://marketplace.visualstudio.com
+        run: npx vsce publish -p ${{ secrets.VSCE_PAT }}
