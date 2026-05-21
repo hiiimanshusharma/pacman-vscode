@@ -23,4 +23,4 @@ jobs:
         run: npm run compile
         
       - name: Publish to Open VSX
-        run: npx vsce publish --registry https://open-vsx.org -p ${{ secrets.OVSX_PAT }}
+        run: npx ovsx publish -p ${{ secrets.OVSX_PAT }}
