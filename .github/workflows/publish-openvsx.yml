@@ -22,5 +22,8 @@ jobs:
       - name: Compile Extension
         run: npm run compile
         
+      - name: Create Namespace (if missing)
+        run: npx ovsx create-namespace hiiimanshusharma -p ${{ secrets.OVSX_PAT }} || true
+
       - name: Publish to Open VSX
         run: npx ovsx publish -p ${{ secrets.OVSX_PAT }}
